@@ -6,3 +6,4 @@ import ServerSocket from "./Packages/Net/Socket/ServerSocket";
 
 
 ServerSocket.initializeSockets();
+console.log('Server is online');

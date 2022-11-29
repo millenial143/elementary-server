@@ -11,9 +11,11 @@ var Lobbies = /** @class */ (function () {
         Lobbies.lastLobbyId += 1;
         return Lobbies.lastLobbyId;
     };
-    Lobbies.createLobby = function (name) {
+    Lobbies.createLobby = function (name, players) {
         var lobbyId = String(Lobbies.generateLobbyId());
-        Lobbies.lobbies.push(new Lobby_1["default"](lobbyId, name));
+        var newLobby = new Lobby_1["default"](lobbyId, name, Number(players));
+        Lobbies.lobbies.push(newLobby);
+        return newLobby;
     };
     Lobbies.getLobbies = function () {
         return Lobbies.lobbies;

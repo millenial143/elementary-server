@@ -11,9 +11,11 @@ export default class Lobbies{
         return Lobbies.lastLobbyId;
     }
 
-    public static createLobby(name: string){
+    public static createLobby(name: string, players: string){
         const lobbyId = String(Lobbies.generateLobbyId());
-        Lobbies.lobbies.push(new Lobby(lobbyId, name));
+        const newLobby = new Lobby(lobbyId, name, Number(players));
+        Lobbies.lobbies.push(newLobby);
+        return newLobby;
     }
 
     public static getLobbies(){
